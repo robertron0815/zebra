@@ -1,12 +1,37 @@
-<div class="scanning-item">
-  <div class="scanner-test">
-    <h2>Barcode Scanner</h2>
-    <br/>
-    <input id="scanData" type=text>
-    <br/>
-    <div class="button-wrapper">
-      <input type=button class="scan-button" value="Enable Scan" (click)="fnScanEnable();">
-      <input type=button class="scan-button" value="Disable Scan" (click)="fnScanDisable();">
+<div class="app-wrapper">
+  <header>
+    <img src="../assets/VWAG_Logo.svg" alt="Volkswagen AG">
+
+    <div class="login-state" *ngIf="isAuthenticated">
+      <p>Angemeldet als: {{claims['name']}}</p>
+      <button (click)="logout();">Logout</button>
     </div>
-  </div>
+  </header>
+
+  <section class="authentication">
+    <div *ngIf="!isAuthenticated">
+      <h2>Bitte melden Sie sich an, um die Scanning-App zu bedienen.</h2>
+      <button (click)="login();">Login</button>
+    </div>
+
+    <ng-container *ngIf="isAuthenticated">
+      <div *ngIf="!permission" class="permission-denied">
+        <p>Leider haben Sie keine Zugriffsberechtigung. Bitte wenden Sie sich an Ihren Administrator.</p>
+      </div>
+    </ng-container>
+  </section>
+
+  <main *ngIf="isAuthenticated && permission">
+    <router-outlet></router-outlet>
+  </main>
+  <p class="version">Version {{ version }}</p>
 </div>
+
+<app-not-authorised-overlay
+  [visibility]="overlayVisibility"
+  [targetEl]="parentEl"  
+  [infoTitleText]="infoTitleText"
+  [infoReasonText]="infoReasonText"
+  [infoProposalText]="infoProposalText"
+  (notAuthorizedLogout)="notAuthorizedLogout()">
+</app-not-authorised-overlay>

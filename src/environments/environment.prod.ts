@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  SETTINGS_URI: '/settings',
+  settingsApi: '../assets/settings.json',
+  VERSION: require('../../../package.json').version
 };

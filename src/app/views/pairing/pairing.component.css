@@ -1,0 +1,173 @@
+.scanning-wrapper {
+  margin-bottom: 20px;
+}
+
+.scanning-wrapper .success {
+  color: var(--white);
+  background: var(--vw-ampel-gruen);
+}
+
+.scanning-wrapper .danger {
+  color: var(--white);
+  background: var(--vw-ampel-rot);
+}
+
+.scanning-item {
+  margin: 0 auto 20px;
+  position: relative;
+  max-width: 348px;
+}
+
+@media only screen and (min-width: 768px) {
+  .scanning-item {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.scanning-item > img {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  position: absolute;
+  top: 34px;
+  right: -7px;
+}
+
+@media only screen and (min-width: 768px) {
+  .scanning-item > img {
+    width: 65px;
+    height: 65px;
+    position: static;
+  }
+}
+
+.headline {
+  display: block;
+  margin-bottom: 15px;
+}
+
+
+.headline > input {
+  width: calc(100% - 32px);
+  max-width: 348px;
+  height: 20px;
+  margin-top: 10px;
+  padding: 3px 25px 3px 6px;
+  border: 1px solid var(--vw-grey);
+}
+
+@media only screen and (min-width: 768px) {
+  .headline > input {
+    width: 230px;
+    max-width: 230px;
+  }
+}
+
+.headline > input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(76, 83, 86, 0.25);
+}
+
+.headline > input::placeholder {
+  font-style: italic;
+}
+
+.headline > input.isValid {
+  color: var(--vw-ampel-gruen);
+  background-image: url('../../../assets/baseline_check_24px_vwag_ampelgruen.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 1px solid var(--vw-ampel-gruen);
+}
+
+.headline > input.isInvalid {
+  background-image: url('../../../assets/baseline_close_24px_vwag_ampelrot.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 1px solid var(--vw-ampel-rot);
+}
+
+.headline > input.isInvalid::placeholder {
+  color: var(--vw-ampel-rot);
+}
+
+.pairing-wrapper {
+  text-align: center;
+}
+
+.pairing-wrapper > button {
+  width: 100%;
+  max-width: 348px;
+  padding: 20px 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--vw-grey);
+  background: var(--white);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.pairing-wrapper > button:hover {
+  color: var(--white);
+  background: var(--vw-grey);
+}
+
+.pairing-wrapper > button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(76, 83, 86, 0.25);
+}
+
+.pairing-wrapper > button.success {
+  background-image: url('../../../assets/baseline_check_24px_vwag_ampelgruen.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pairing-wrapper > button.danger {
+  background-image: url('../../../assets/baseline_close_24px_vwag_ampelrot.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+app-overlay {
+  text-align: center;
+}
+
+/******* Scanner Test ****/
+.scanner-test {
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.scanner-test h2 {
+  text-align: center;
+}
+
+#scanData {
+  height: 25px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.scan-button {
+  padding: 20px;
+  width: 48%;
+  max-width: 150px;
+  background: white;
+  border: 1px solid var(--vw-grey);
+}
+
+.scan-button:focus {
+  background: var(--vw-grey);
+  color: white;
+}

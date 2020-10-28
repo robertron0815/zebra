@@ -1,0 +1,55 @@
+<div class="scanning-wrapper">
+
+  <div class="scanning-item">
+    <div class="scanner-test">
+      <h2>Barcode Scanner</h2>
+      <br/>
+      <input id="scanData" type=text>
+      <br/>
+      <div class="button-wrapper">
+        <input type=button class="scan-button" value="Enable Scan" (click)="fnScanEnable();">
+        <input type=button class="scan-button" value="Disable Scan" (click)="fnScanDisable();">
+      </div>
+    </div>
+  </div>
+
+  <div class="scanning-item">
+    <img src="../../../assets/bar-code.svg" alt="Barcode">
+    <div class="headline">
+      <div class="label">Erfassung Kennnummer Fahrzeug</div>
+      <input type="text" id="inp-car-id" placeholder="Fahrzeugnummer" [(ngModel)]="carId"
+        (keyup)="removeStyleHandler($event)" [ngClass]="{
+          'isValid': isValid.carId,
+          'isInvalid': isInvalid.carId
+        }" />
+    </div>
+  </div>
+  <div class="scanning-item">
+    <img src="../../../assets/qr-code.svg" alt="Barcode">
+    <div class="headline">
+      <div class="label">Erfassung Beacon</div>
+      <input type="text" id="inp-beacon-id" placeholder="Beaconnummer" [(ngModel)]="beaconId"
+        (keyup)="removeStyleHandler($event)" [ngClass]="{
+          'isValid': isValid.beaconId,
+          'isInvalid': isInvalid.beaconId
+        }" />
+    </div>
+  </div>
+</div>
+
+<div class="pairing-wrapper">
+  <button type="submit" id="btn-pairing" (click)="pairIDsHandler()" [ngClass]="{
+    'success': isValid.btnPairing,
+    'danger': isInvalid.btnPairing
+  }">{{ btnPairingText ? btnPairingText : '&nbsp;' }}</button>
+</div>
+
+<app-overlay
+[visibility]="overlayVisibility"
+[targetEl]="parentEl"
+[background]="overlayColor"
+[infoText]="infoText"
+(resetOverlay)="resetOverlay()"
+padding="0"
+opacity="0.6">
+</app-overlay>
