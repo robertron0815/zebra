@@ -1,0 +1,50 @@
+:root {
+  --white: #fff;
+  --vw-grey: #4C5356;
+  --vw-petrol: #004666;
+  --vw-petrol-light: #C6DFE7;
+  --vw-blue-dark: #006384;
+  --vw-blue-light: #80B0C8;
+  --vw-green: #95A844;
+  --vw-green-light: #C2CCA6;
+  --vw-red-dark: #5F1939;
+  --vw-red: #A21E4D;
+  --vw-orange-dark: #D8AA00;
+  --vw-sand: #F6E5BC;
+  --vw-silver: #A8ADB3;
+  --vw-ampel-rot: #DA0C1F;
+  --vw-ampel-gruen: #64A844;
+  --vw-ampel-gelb: #FCCD22;
+}
+
+@font-face {
+  font-family: VWAGTheSans;
+  src: url('./assets/VWAG_TheSans_Web/VWAGTheSans-Regular.woff2') format('woff2'),
+       url('./assets/VWAG_TheSans_Web/VWAGTheSans-Regular.woff') format('woff');
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'VWAGTheSans';
+  color: var(--vw-grey);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button,
+input {
+  margin: 0;
+  padding: 0;
+  font-family: 'VWAGTheSans';
+}

@@ -2,8 +2,18 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+// export const environment = {
+//   production: false,
+//   SETTINGS_URI: 'https://api.vw.robotronlab.de:30443/api/scanner/v2',
+//   settingsApi: '../assets/settings.json',
+//   VERSION: require('../../../package.json').version
+// };
+
+
 export const environment = {
-  production: false
+  production: false,
+  SETTINGS_URI: 'https://api.vw.robotronlab.de:30443/api/scanner/v2',
+  settingsApi: '../assets/settings.json',
 };
 
 /*
